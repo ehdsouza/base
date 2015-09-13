@@ -256,6 +256,7 @@ class Shell(object):
             os_command = os_command + list(arguments)
         elif isinstance(arguments, str):
             os_command = os_command + arguments.split()
+            os_command = " ".join(os_command).replace("\\","/")
         else:
             print "ERROR: Wrong parameter type", type(arguments)
 
